@@ -1,8 +1,8 @@
 # Pandas-Testowanie
 ## Podział ról w zespole:
-- **Adam Dąbrowski:** Zarządzanie zespołem, repozytorium, pipelinem i przebiegiem prac zgodnie z ustalonym harmonogramem
-- **Maciej Grzegorczyk:** Testy wydajnościowe i akceptacyjne oraz w razie potrzeby inne przydzielone zadania
-- **Magda Kaczorowska:** Testy funkcjonalne oraz w razie potrzeby inne przydzielone zadania
+- **Adam Dąbrowski:** Zarządzanie zespołem, repozytorium, pipelinem i przebiegiem prac zgodnie z ustalonym harmonogramem, przygotowanie 1 testu funkcjonalnego oraz 1 scenariusza testu akceptacyjnego
+- **Maciej Grzegorczyk:** Przygotowanie 1 testu funkcjonalnego, 1 testu wydajnościowego, 1 scenariusza testu akceptacyjnego oraz w razie potrzeby inne przydzielone zadania
+- **Magda Kaczorowska:** Przygotowanie 1 testu funkcjonalnego, 1 testu wydajnościowego, 1 scenariusza testu akceptacyjnego oraz w razie potrzeby inne przydzielone zadania
 
 ## Cel projektu
 
