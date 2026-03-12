@@ -1,8 +1,8 @@
 # Pandas-Testowanie
 ## Podział ról w zespole:
-- Adam Dąbrowski: Zarządzanie zespołem, repozytorium, pipelinem i przebiegiem prac zgodnie z ustalonym harmonogramem
-- Maciej Grzegorczyk: Testy wydajnościowe i akceptacyjne oraz w razie potrzeby inne przydzielone zadania
-- Magda Kaczorowska: Testy funkcjonalne oraz w razie potrzeby inne przydzielone zadania
+- **Adam Dąbrowski:** Zarządzanie zespołem, repozytorium, pipelinem i przebiegiem prac zgodnie z ustalonym harmonogramem
+- **Maciej Grzegorczyk:** Testy wydajnościowe i akceptacyjne oraz w razie potrzeby inne przydzielone zadania
+- **Magda Kaczorowska:** Testy funkcjonalne oraz w razie potrzeby inne przydzielone zadania
 
 ## Cel projektu
 
@@ -25,3 +25,11 @@ Projekt nie ma na celu stworzenia zaawansowanego systemu walidacyjnego, ale ma b
 -   **Messanger**: Do bieżącego i szybkiego komunikowania się grupy.
 -   **GitHub Issues**: Do zarządzania zadaniami i zgłaszania problemów.
 -   **Pull Requests**: Do wprowadzania zmian w kodzie z obowiązkowym przeglądem.
+
+## Harmonogram
+- **13.03.2026:** Założone repozytorium, ustalone cele projektu, harmonogram, role w zespole, kanały komunikacji i zaplanowane wstępne scenariusze testowe
+- **03.04.2026:** Skonfigurowany Pipeline, pobrany commit z oficjalnego repozytorium Github modułu i lokalnie zbudowany
+- **17.04.2026:** Gotowe testy funkcjonalne 
+- **08.05.2026:** Gotowe testy wydajnościowe
+- **22.05.2026:** Gotowe scenariusze testów akceptacyjnych
+- **05.06.2026:** Gotowa prezentacja projektu z omówieniem problemów, które napotkał zespół oraz refleksja, co by można zrobić inaczej
