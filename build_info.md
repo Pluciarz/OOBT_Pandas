@@ -16,7 +16,11 @@ Flaga `--no-build-isolation` jest konieczna, ponieważ zależności budowania
 instalowane są wcześniej ręcznie w środowisku.
 
 ## Napotkane problemy
-*(sekcja uzupełniana na bieżąco)*
+
+### Ostrzeżenie Node.js 20 deprecation w GitHub Actions
+Pipeline wyświetla ostrzeżenie o deprecacji Node.js 20 dla akcji
+`actions/checkout@v4` i `actions/setup-python@v5`. Jest to wyłącznie
+ostrzeżenie — pipeline działa poprawnie.
 
 ## Weryfikacja
 Po zbudowaniu poprawność instalacji weryfikowana jest przez:
