@@ -1,4 +1,4 @@
-pythonimport pandas as pd
+import pandas as pd
 import os
 
 FIXTURE_PATH = os.path.join(os.path.dirname(__file__), "..", "fixtures", "products.csv")
