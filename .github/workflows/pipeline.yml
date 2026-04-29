@@ -51,15 +51,29 @@ jobs:
 
       - name: Install test dependencies
         run: |
-          pip install pytest pytest-benchmark
+          pip install pytest pytest-html pytest-cov
 
       - name: Run functional tests
         run: |
-          python -m pytest tests/functional/ -v --tb=short
+          python -m pytest tests/functional/ -v --tb=short \
+            --html=reports/functional_report.html \
+            --self-contained-html \
+            --junitxml=reports/functional_results.xml \
+            --cov=tests/functional \
+            --cov-report=html:reports/coverage_html
 
       - name: Run performance tests
         run: |
-          python -m pytest tests/performance/ -v --tb=short
+          python -m pytest tests/performance/ -v --tb=short \
+            --html=reports/performance_report.html \
+            --self-contained-html \
+            --junitxml=reports/performance_results.xml
+
+      - name: Upload test reports as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: reports/
 
       - name: Summary
         run: |
