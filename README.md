@@ -1,4 +1,5 @@
 # OOBT_Pandas
+![Pipeline Status](https://github.com/Pluciarz/OOBT_Pandas/actions/workflows/pipeline.yml/badge.svg)
 
 ## Cel projektu
 Celem projektu jest zaprojektowanie i implementacja uproszczonego systemu testowania typu "out-of-the-box" dla biblioteki Pandas, dostępnej w repozytorium PyPI.
@@ -28,3 +29,20 @@ Projekt nie ma na celu stworzenia zaawansowanego systemu walidacyjnego, ale ma b
 Szczegółowe informacje dotyczące planowania i testów znajdują się w folderze `docs/`:
 - 📅 [Harmonogram prac](docs/harmonogram.md)
 - 🧪 [Wstępne scenariusze testowe](docs/scenariusze_testowe.md)
+
+## Pipeline
+
+Pipeline uruchamia się automatycznie przy każdym pushu i Pull Requeście.
+
+### Co sprawdza pipeline:
+- buduje pandas 3.0.2 ze źródeł (commit `ab90747`)
+- uruchamia testy funkcjonalne
+- uruchamia testy wydajnościowe
+- generuje raport HTML i XML z wyników
+- generuje raport pokrycia kodu
+
+### Co oznacza sukces:
+Zielona odznaka — wszystkie testy przeszły, raporty dostępne w zakładce Actions → Artifacts.
+
+### Co oznacza porażka:
+Czerwona odznaka — szczegóły błędu w zakładce Actions → ostatnie uruchomienie → logi.
