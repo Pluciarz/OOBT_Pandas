@@ -1,10 +1,12 @@
 # Harmonogram prac zespołu
 
-Poniżej znajduje się zaplanowany harmonogram prac dla projektu OOBT_Pandas:
+Harmonogram zgodny z oficjalnym harmonogramem prowadzącego.
 
-- **13.03.2026:** Założone repozytorium, ustalone cele projektu, harmonogram, role w zespole, kanały komunikacji i zaplanowane wstępne scenariusze testowe
-- **03.04.2026:** Skonfigurowany Pipeline, pobrany commit z oficjalnego repozytorium Github modułu i lokalnie zbudowany
-- **17.04.2026:** Gotowe 5 testów funkcjonalnych
-- **08.05.2026:** Gotowe 2 testy wydajnościowe
-- **22.05.2026:** Gotowe  3 scenariusze testów akceptacyjnych
-- **05.06.2026:** Gotowa prezentacja projektu z omówieniem problemów, które napotkał zespół oraz refleksja, co by można zrobić inaczej
+| Data | Etap | Zakres | Status |
+|------|------|--------|--------|
+| 13.03.2026 | Organizacja projektu | Założenie repozytorium, cele, role, komunikacja, wstępne scenariusze testowe | ✅ Zaliczone |
+| 03.04.2026 | Konfiguracja pipeline i budowanie ze źródeł | Skonfigurowany pipeline CI/CD, pandas v3.0.2 zbudowany z commita `ab90747` | ✅ Zaliczone |
+| 17.04.2026 | START — punkt kontrolny 1 | Ocena organizacji projektu przez prowadzącego | ✅ Zaliczone |
+| 24.04.2026 | Iteracja 1 — zarządzanie kodem | Ocena Issues, PR, code review, jakości commitów, podziału zadań | ✅ Zaliczone |
+| 08.05.2026 | Iteracja 2 — testowanie | Testy funkcjonalne, wydajnościowe, raportowanie, scenariusze akceptacyjne | 🔄 W toku |
+| 22.05.2026 | RELEASE — finalizacja | Kompletna dokumentacja, działający pipeline, prezentacja, samoocena | ⏳ Planowane |
