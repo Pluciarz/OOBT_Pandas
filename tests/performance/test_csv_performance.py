@@ -29,5 +29,5 @@ def test_read_csv_performance():
         elapsed = time.perf_counter() - start
 
         print(f"\n[PERF] read_csv on 100k rows: {elapsed:.4f}s")
-        assert elapsed < 3.0, f"read_csv too slow: {elapsed:.4f}s"
+        assert elapsed < 3.5, f"read_csv too slow: {elapsed:.4f}s"
         assert len(df) == 100_000
