@@ -27,3 +27,11 @@ def test_merge_excludes_unmatched_ids():
     merged = pd.merge(employees, departments, on="id", how="inner")
     assert 4 not in merged["id"].values
     assert 5 not in merged["id"].values
+
+
+def test_left_merge_keeps_all_left_rows():
+    """Left merge should keep all rows from left DataFrame."""
+    employees = pd.read_csv(EMPLOYEES_PATH)
+    departments = pd.read_csv(DEPARTMENTS_PATH)
+    merged = pd.merge(employees, departments, on="id", how="left")
+    assert len(merged) == len(employees)
