@@ -27,3 +27,27 @@ def test_merge_excludes_unmatched_ids():
     merged = pd.merge(employees, departments, on="id", how="inner")
     assert 4 not in merged["id"].values
     assert 5 not in merged["id"].values
+
+
+def test_left_merge_keeps_all_left_rows():
+    """Left merge should keep all rows from left DataFrame."""
+    employees = pd.read_csv(EMPLOYEES_PATH)
+    departments = pd.read_csv(DEPARTMENTS_PATH)
+    merged = pd.merge(employees, departments, on="id", how="left")
+    assert len(merged) == len(employees)
+
+
+def test_merge_no_common_ids_returns_empty():
+    """Inner merge with no common IDs should return empty DataFrame."""
+    df1 = pd.DataFrame({"id": [1, 2], "name": ["Alice", "Bob"]})
+    df2 = pd.DataFrame({"id": [9, 10], "department": ["HR", "IT"]})
+    merged = pd.merge(df1, df2, on="id", how="inner")
+    assert len(merged) == 0
+
+
+def test_merge_duplicate_ids():
+    """Merge with duplicate IDs should produce correct number of rows."""
+    df1 = pd.DataFrame({"id": [1, 1], "name": ["Alice", "Alice2"]})
+    df2 = pd.DataFrame({"id": [1], "department": ["Engineering"]})
+    merged = pd.merge(df1, df2, on="id", how="inner")
+    assert len(merged) == 2
