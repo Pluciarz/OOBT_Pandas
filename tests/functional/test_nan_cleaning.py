@@ -50,3 +50,13 @@ def test_dropna_all_rows_have_nan():
     })
     cleaned = df.dropna()
     assert len(cleaned) == 0
+
+
+def test_dropna_subset_column():
+    """dropna on subset should only remove rows with NaN in that column."""
+    df = pd.DataFrame({
+        "name": ["Alice", None, "Charlie"],
+        "age": [30, 25, None]
+    })
+    cleaned = df.dropna(subset=["name"])
+    assert len(cleaned) == 2
