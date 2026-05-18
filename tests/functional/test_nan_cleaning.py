@@ -30,3 +30,13 @@ def test_dropna_row_count_less_than_original():
     })
     cleaned = df.dropna()
     assert len(cleaned) < len(df)
+
+
+def test_dropna_on_clean_dataframe():
+    """DataFrame with no NaN values should remain unchanged after dropna."""
+    df = pd.DataFrame({
+        "name": ["Alice", "Bob", "Charlie"],
+        "age": [30, 25, 35]
+    })
+    cleaned = df.dropna()
+    assert len(cleaned) == len(df)
