@@ -43,3 +43,11 @@ def test_merge_no_common_ids_returns_empty():
     df2 = pd.DataFrame({"id": [9, 10], "department": ["HR", "IT"]})
     merged = pd.merge(df1, df2, on="id", how="inner")
     assert len(merged) == 0
+
+
+def test_merge_duplicate_ids():
+    """Merge with duplicate IDs should produce correct number of rows."""
+    df1 = pd.DataFrame({"id": [1, 1], "name": ["Alice", "Alice2"]})
+    df2 = pd.DataFrame({"id": [1], "department": ["Engineering"]})
+    merged = pd.merge(df1, df2, on="id", how="inner")
+    assert len(merged) == 2
