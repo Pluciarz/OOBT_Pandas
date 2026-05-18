@@ -21,6 +21,14 @@ Projekt obejmuje:
 - **[Magda Kaczorowska](https://github.com/misia4pysia):** 2 testy funkcjonalne,
   1 test wydajnościowy, 1 scenariusz akceptacyjny
 
+## Dokumentacja projektu
+Szczegółowe informacje znajdują się w folderze `docs/`:
+- 📅 [Harmonogram prac](docs/harmonogram.md)
+- 🧪 [Wstępne scenariusze testowe](docs/scenariusze_testowe.md)
+- ✅ [Scenariusze akceptacyjne — Maciej](docs/scenariusz_akceptacyjny_maciej.md)
+- ✅ [Scenariusze akceptacyjne — Magda](docs/scenariusz_akceptacyjny_magda.md)
+- 📋 [Samoocena projektu](docs/samoocena.md)
+
 ## Struktura repozytorium
 ```
 OOBT_Pandas/
@@ -30,7 +38,9 @@ OOBT_Pandas/
 ├── docs/
 │   ├── harmonogram.md                # Harmonogram projektu
 │   ├── scenariusze_testowe.md        # Wstępne scenariusze testowe
-│   └── scenariusze_akceptacyjne.md   # Scenariusze testów akceptacyjnych
+│   ├── scenariusz_akceptacyjny_maciej.md
+│   ├── scenariusz_akceptacyjny_magda.md
+│   └── samoocena.md                  # Samoocena i wnioski
 ├── tests/
 │   ├── fixtures/                     # Dane testowe CSV
 │   ├── functional/                   # Testy funkcjonalne
