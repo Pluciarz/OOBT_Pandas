@@ -40,3 +40,13 @@ def test_dropna_on_clean_dataframe():
     })
     cleaned = df.dropna()
     assert len(cleaned) == len(df)
+
+
+def test_dropna_all_rows_have_nan():
+    """DataFrame where every row has NaN should result in empty DataFrame."""
+    df = pd.DataFrame({
+        "name": [None, None, None],
+        "age": [None, None, None]
+    })
+    cleaned = df.dropna()
+    assert len(cleaned) == 0
