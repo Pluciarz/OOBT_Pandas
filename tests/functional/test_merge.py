@@ -35,3 +35,11 @@ def test_left_merge_keeps_all_left_rows():
     departments = pd.read_csv(DEPARTMENTS_PATH)
     merged = pd.merge(employees, departments, on="id", how="left")
     assert len(merged) == len(employees)
+
+
+def test_merge_no_common_ids_returns_empty():
+    """Inner merge with no common IDs should return empty DataFrame."""
+    df1 = pd.DataFrame({"id": [1, 2], "name": ["Alice", "Bob"]})
+    df2 = pd.DataFrame({"id": [9, 10], "department": ["HR", "IT"]})
+    merged = pd.merge(df1, df2, on="id", how="inner")
+    assert len(merged) == 0
