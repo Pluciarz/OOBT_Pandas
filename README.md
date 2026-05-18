@@ -1,48 +1,93 @@
 # OOBT_Pandas
+
 ![Pipeline Status](https://github.com/Pluciarz/OOBT_Pandas/actions/workflows/pipeline.yml/badge.svg)
 
 ## Cel projektu
-Celem projektu jest zaprojektowanie i implementacja uproszczonego systemu testowania typu "out-of-the-box" dla biblioteki Pandas, dostępnej w repozytorium PyPI.
+Celem projektu jest zaprojektowanie i implementacja uproszczonego systemu
+testowania typu "out-of-the-box" dla biblioteki Pandas dostępnej w PyPI.
 
-Głównym zadaniem projektu jest praktyczne zapoznanie się z:
-- Pracą zespołową z wykorzystaniem repozytorium **GitHub**.
-- Podstawami **CI/CD** poprzez stworzenie ręcznie uruchamianego pipeline'a w **GitHub Actions**.
-- Projektowaniem i wykonywaniem **testów funkcjonalnych** i **wydajnościowych**.
-- Tworzeniem **scenariuszy testów akceptacyjnych**.
-- Organizacją pracy w zespole projektowym.
-
-**Wybrany moduł: Pandas**
-Pandas to fundamentalne narzędzie do analizy i przetwarzania danych w języku Python. Oferuje wydajne struktury danych, takie jak DataFrame, idealne do pracy z danymi tabelarycznymi. Pozwoli to stworzyć praktyczne scenariusze testowe, które sprawdzą kluczowe funkcjonalności biblioteki w codziennym użyciu.
-Projekt nie ma na celu stworzenia zaawansowanego systemu walidacyjnego, ale ma być rozsądny objętościowo i skoncentrowany na solidnych podstawach testowania i pracy w zespole.
+Projekt obejmuje:
+- Budowanie Pandas v3.0.2 ze źródeł (commit `ab90747`)
+- Testy funkcjonalne sprawdzające realne użycie biblioteki
+- Testy wydajnościowe z progami czasowymi
+- Scenariusze testów akceptacyjnych
+- Automatyczny pipeline CI/CD z raportowaniem wyników
 
 ## Zespół i podział ról
-- **[Adam Dąbrowski](https://github.com/Pluciarz):** Zarządzanie zespołem, repozytorium, pipelinem i przebiegiem prac zgodnie z ustalonym harmonogramem, przygotowanie 1 testu funkcjonalnego oraz 1 scenariusza testu akceptacyjnego.
-- **[Maciej Grzegorczyk](https://github.com/ZMaciek):** Przygotowanie 2 testów funkcjonalnych, 1 testu wydajnościowego, 1 scenariusza testu akceptacyjnego oraz w razie potrzeby inne przydzielone zadania.
-- **[Magda Kaczorowska](https://github.com/misia4pysia):** Przygotowanie 2 testów funkcjonalnych, 1 testu wydajnościowego, 1 scenariusza testu akceptacyjnego oraz w razie potrzeby inne przydzielone zadania.
-
-## Komunikacja
-- **Messanger**: Do bieżącego i szybkiego komunikowania się grupy.
-- **GitHub Issues**: Do zarządzania zadaniami i zgłaszania problemów.
-- **Pull Requests**: Do wprowadzania zmian w kodzie z obowiązkowym przeglądem.
+- **[Adam Dąbrowski](https://github.com/Pluciarz):** Zarządzanie zespołem,
+  repozytorium, pipeline, 1 test funkcjonalny, 1 scenariusz akceptacyjny
+- **[Maciej Grzegorczyk](https://github.com/ZMaciek):** 2 testy funkcjonalne,
+  1 test wydajnościowy, 1 scenariusz akceptacyjny
+- **[Magda Kaczorowska](https://github.com/misia4pysia):** 2 testy funkcjonalne,
+  1 test wydajnościowy, 1 scenariusz akceptacyjny
 
 ## Dokumentacja projektu
-Szczegółowe informacje dotyczące planowania i testów znajdują się w folderze `docs/`:
+Szczegółowe informacje znajdują się w folderze `docs/`:
 - 📅 [Harmonogram prac](docs/harmonogram.md)
 - 🧪 [Wstępne scenariusze testowe](docs/scenariusze_testowe.md)
+- ✅ [Scenariusze akceptacyjne — Maciej](docs/scenariusz_akceptacyjny_maciej.md)
+- ✅ [Scenariusze akceptacyjne — Magda](docs/scenariusz_akceptacyjny_magda.md)
+- 📋 [Samoocena projektu](docs/samoocena.md)
+
+## Struktura repozytorium
+```
+OOBT_Pandas/
+├── .github/
+│   └── workflows/
+│       └── pipeline.yml              # Pipeline CI/CD
+├── docs/
+│   ├── harmonogram.md                # Harmonogram projektu
+│   ├── scenariusze_testowe.md        # Wstępne scenariusze testowe
+│   ├── scenariusz_akceptacyjny_maciej.md
+│   ├── scenariusz_akceptacyjny_magda.md
+│   └── samoocena.md                  # Samoocena i wnioski
+├── tests/
+│   ├── fixtures/                     # Dane testowe CSV
+│   ├── functional/                   # Testy funkcjonalne
+│   └── performance/                  # Testy wydajnościowe
+├── build_info.md                     # Dokumentacja budowania ze źródeł
+├── requirements.txt                  # Zależności projektu
+└── README.md
+```
+
+## Uruchomienie projektu
+
+### Wymagania
+- Python 3.11+
+- Git
+
+### Instalacja zależności
+```bash
+pip install -r requirements.txt
+```
+
+### Uruchomienie testów lokalnie
+```bash
+# Testy funkcjonalne
+pytest tests/functional/ -v
+
+# Testy wydajnościowe
+pytest tests/performance/ -v
+```
 
 ## Pipeline
 
 Pipeline uruchamia się automatycznie przy każdym pushu i Pull Requeście.
 
-### Co sprawdza pipeline:
-- buduje pandas 3.0.2 ze źródeł (commit `ab90747`)
-- uruchamia testy funkcjonalne
-- uruchamia testy wydajnościowe
-- generuje raport HTML i XML z wyników
-- generuje raport pokrycia kodu
+Co robi pipeline:
+1. Klonuje Pandas v3.0.2 z commita `ab90747`
+2. Buduje Pandas ze źródeł
+3. Uruchamia testy funkcjonalne
+4. Uruchamia testy wydajnościowe
+5. Generuje raporty HTML i XML
+6. Generuje raport pokrycia kodu
+7. Zapisuje raporty jako artefakt w Actions
 
-### Co oznacza sukces:
-Zielona odznaka — wszystkie testy przeszły, raporty dostępne w zakładce Actions → Artifacts.
+Zielona odznaka — wszystkie testy przeszły, raporty dostępne
+w Actions → ostatnie uruchomienie → Artifacts.
+Czerwona odznaka — szczegóły błędu w Actions → logi.
 
-### Co oznacza porażka:
-Czerwona odznaka — szczegóły błędu w zakładce Actions → ostatnie uruchomienie → logi.
+## Komunikacja
+- **Messenger:** Bieżąca komunikacja zespołu
+- **GitHub Issues:** Zarządzanie zadaniami
+- **Pull Requests:** Wprowadzanie zmian z obowiązkowym code review
