@@ -24,4 +24,4 @@ ostrzeżenie — pipeline działa poprawnie.
 
 ## Weryfikacja
 Po zbudowaniu poprawność instalacji weryfikowana jest przez:
-python -c "import pandas as pd; print(pd.version)"
+python -c "import pandas as pd; print(pd.__version__)"

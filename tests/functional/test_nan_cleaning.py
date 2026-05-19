@@ -30,3 +30,33 @@ def test_dropna_row_count_less_than_original():
     })
     cleaned = df.dropna()
     assert len(cleaned) < len(df)
+
+
+def test_dropna_on_clean_dataframe():
+    """DataFrame with no NaN values should remain unchanged after dropna."""
+    df = pd.DataFrame({
+        "name": ["Alice", "Bob", "Charlie"],
+        "age": [30, 25, 35]
+    })
+    cleaned = df.dropna()
+    assert len(cleaned) == len(df)
+
+
+def test_dropna_all_rows_have_nan():
+    """DataFrame where every row has NaN should result in empty DataFrame."""
+    df = pd.DataFrame({
+        "name": [None, None, None],
+        "age": [None, None, None]
+    })
+    cleaned = df.dropna()
+    assert len(cleaned) == 0
+
+
+def test_dropna_subset_column():
+    """dropna on subset should only remove rows with NaN in that column."""
+    df = pd.DataFrame({
+        "name": ["Alice", None, "Charlie"],
+        "age": [30, 25, None]
+    })
+    cleaned = df.dropna(subset=["name"])
+    assert len(cleaned) == 2
