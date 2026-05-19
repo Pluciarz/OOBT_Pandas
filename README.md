@@ -1,6 +1,6 @@
 # OOBT_Pandas
 
-![Pipeline Status](https://github.com/Pluciarz/OOBT_Pandas/actions/workflows/pipeline.yml/badge.svg)
+[![Pipeline Status](https://github.com/Pluciarz/OOBT_Pandas/actions/workflows/pipeline.yml/badge.svg)](https://github.com/Pluciarz/OOBT_Pandas/actions/workflows/pipeline.yml)
 
 ## Cel projektu
 Celem projektu jest zaprojektowanie i implementacja uproszczonego systemu
